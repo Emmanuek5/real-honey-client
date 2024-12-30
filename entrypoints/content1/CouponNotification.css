@@ -1,0 +1,65 @@
+.honey-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(145deg, #121212, #090909);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 999999;
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+             fadeOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) 4.7s forwards;
+  backdrop-filter: blur(10px);
+}
+
+.honey-notification-icon {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.15));
+}
+
+.honey-notification-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.honey-notification-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffc107;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.15);
+}
+
+.honey-notification-text {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
